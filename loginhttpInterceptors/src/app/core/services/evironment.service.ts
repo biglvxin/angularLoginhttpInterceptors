@@ -14,6 +14,8 @@ export class EvironmentService {
     return this.http.get(url).pipe(
       tap((userEnabled) => {
         this.userEnabled$.next(userEnabled);
-    }));
+    })
+   
+    );
   }
 }

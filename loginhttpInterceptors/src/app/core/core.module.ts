@@ -5,7 +5,8 @@ import { CoreRoutingModule } from './core-routing.module';
 import { CoreComponent } from './core.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { EvironmentService } from './services/evironment.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './services/token-interceptor.service';
 
 export function init(evironmentService: EvironmentService) {
   return () => {
@@ -23,11 +24,15 @@ export function init(evironmentService: EvironmentService) {
   providers: [
     EvironmentService,
     {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    },
+    {
       provide: APP_INITIALIZER,
       useFactory: init,
       deps: [EvironmentService],
       multi: true
-
     }
   ]
 })
