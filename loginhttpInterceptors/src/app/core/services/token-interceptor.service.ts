@@ -60,6 +60,7 @@ export class TokenInterceptor implements HttpInterceptor {
                     break;
                 case 404:
                 case 500:
+                    console.log(event);
                     break;
                 default:
                     return of(event);

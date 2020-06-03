@@ -15,7 +15,6 @@ export class EvironmentService {
       tap((userEnabled) => {
         this.userEnabled$.next(userEnabled);
     })
-   
     );
   }
 }
