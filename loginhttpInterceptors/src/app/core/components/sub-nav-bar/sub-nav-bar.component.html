@@ -1,0 +1,7 @@
+<ul class="nav navbar-nav">
+  <li title="{{item.title}}" *ngFor="let item of modulesLists;" [routerLinkActive]="['active']">
+    <a routerLink="{{item.routerLink}}">
+      <span>{{item.name}}</span>
+    </a>
+  </li>
+</ul>

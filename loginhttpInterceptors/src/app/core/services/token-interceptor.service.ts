@@ -9,7 +9,7 @@ const ignoreToken = ['user', 'evironment'];
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>   {
-        console.log(req);
+       // console.log(req);
         // 补全地址
         let url = req.url;
         const needToken = ignoreToken.filter(u => url.match(u));
@@ -39,7 +39,7 @@ export class TokenInterceptor implements HttpInterceptor {
         // 若token不存在，则不对请求进行处理
         return next.handle(req).pipe(tap(event => {
             if (event instanceof HttpResponse) {
-                console.log(event);
+                // console.log(event);
                 this.handleData(event);
             }
         }, error => {
@@ -60,7 +60,7 @@ export class TokenInterceptor implements HttpInterceptor {
                     break;
                 case 404:
                 case 500:
-                    console.log(event);
+                    // console.log(event);
                     break;
                 default:
                     return of(event);

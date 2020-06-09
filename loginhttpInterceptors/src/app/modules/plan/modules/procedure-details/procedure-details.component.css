@@ -1,0 +1,23 @@
+ul {
+  line-height: 38px;
+  height: 38px;
+  color: #aaaaaa;
+}
+
+ul li {
+  display: inline-block;
+  list-style: none;
+  padding: 0 15px;
+}
+
+ul li:hover {
+ color: #008afe;
+}
+ul li a {
+  text-decoration: none;
+  color: #aaaaaa;
+}
+
+.active {
+  color: #008afe;
+}

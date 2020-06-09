@@ -1,21 +1,21 @@
 <ul class="nav navbar-nav">
-      <li title="Login" >
+      <li title="Login" [routerLinkActive]="['active']">
         <a routerLink="/login/login">
           <span>Login</span>
         </a>
       </li>
     <li title="Plan" [routerLinkActive]="['active']">
-        <a routerLink="/plan/plan-home">
+        <a routerLink="/plan/plan-home/procedure-list">
             <span>Plan</span>
         </a>
     </li>
-    <li title="Design" >
-        <a routerLink="/design/design-home">
+    <li title="Design" [routerLinkActive]="['active']">
+        <a routerLink="/design/design-home/design-list">
             <span>Design</span>
         </a>
     </li>
-    <li title="Execution">
-      <a routerLink="/execution/execution-home">
+    <li title="Execution" [routerLinkActive]="['active']">
+      <a routerLink="/execution/execution-home/execution-list">
         <span>Execution</span>
       </a>
     </li>

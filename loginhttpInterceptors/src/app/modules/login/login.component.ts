@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
       if (res && res.userId) {
         localStorage.setItem('userId', res.userId);
         this.userService.setUserInfo(res);
-        this.router.navigate(['plan/plan-home']);
+        this.router.navigate(['plan/plan-home/procedure-list']);
       }
 
     });

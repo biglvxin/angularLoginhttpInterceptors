@@ -7,7 +7,21 @@ const routes: Routes = [
   {
     path: 'design-home',
     component: DesignComponent,
-    children: []
+    children: [
+      {
+        path: 'design-list',
+        loadChildren: './modules/design-list/design-list.module#DesignListModule',
+      },
+      {
+        path: 'design-details',
+        loadChildren: './modules/design-details/design-details.module#DesignDetailsModule',
+      }
+    ]
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'design-home/design-list'
   }
 ];
 

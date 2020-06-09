@@ -11,7 +11,10 @@ const routes: Routes = [
   {
     path: 'plan',
     loadChildren: './modules/plan/plan.module#PlanModule',
-    canActivate: [AutherticationGuardService]
+    canLoad: [AutherticationGuardService],
+    canActivate: [AutherticationGuardService],
+    canActivateChild: [AutherticationGuardService],
+    canDeactivate: [AutherticationGuardService],
   },
   {
     path: 'design',
@@ -22,9 +25,9 @@ const routes: Routes = [
     loadChildren: './modules/execution/execution.module#ExecutionModule'
   },
   {
-    path: '**',
-    redirectTo: 'plan/plan-home',
-    pathMatch: 'full'
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'plan/plan-home/procedure-list',
   }
 ];
 

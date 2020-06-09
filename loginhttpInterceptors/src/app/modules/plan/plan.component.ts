@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { RouteModel } from 'src/app/core/model/route-model';
 
 @Component({
   selector: 'app-plan',
@@ -6,10 +7,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./plan.component.css']
 })
 export class PlanComponent implements OnInit {
-
+  public modulesLists: Array<RouteModel> = [];
   constructor() { }
 
   ngOnInit() {
+    this.updateModulesLists();
+  }
+  updateModulesLists() {
+    this.modulesLists = [
+      {
+        title: 'procedureList',
+        routerLink: '/plan/plan-home/procedure-list',
+        name: 'procedureList'
+      },
+      {
+        title: 'entityList',
+        routerLink: '/plan/plan-home/entity-list',
+        name: 'entityList'
+      },
+      {
+        title: 'procedureDetails',
+        routerLink: '/plan/plan-home/procedure-details',
+        name: 'procedureDetails'
+      },
+      {
+        title: 'regulatoryCoverage',
+        routerLink: '/plan/plan-home/regulatory-coverage',
+        name: 'regulatoryCoverage'
+      },
+      {
+        title: 'policyCoverage',
+        routerLink: '/plan/plan-home/policy-coverage',
+        name: 'policyCoverage'
+      },
+    ];
   }
 
 }

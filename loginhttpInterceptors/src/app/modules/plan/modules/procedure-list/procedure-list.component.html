@@ -1,0 +1,17 @@
+<p>procedure-list works!</p>
+<table border="1">
+  <thead>
+    <th> name</th>
+    <th> id</th>
+    <th> version</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data;">
+      <td>
+        <a (click)="goToDetails(item)" style="color: #998afe;cursor: pointer;">{{item.name}}</a>
+      </td>
+      <td>{{item.id}}</td>
+      <td>{{item.version}}</td>
+    </tr>
+  </tbody>
+</table>
