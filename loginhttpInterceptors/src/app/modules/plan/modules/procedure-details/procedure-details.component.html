@@ -6,8 +6,12 @@
     </a>
   </li>
   <li title="design">
-    <a routerLink="/plan/plan-home/procedure-details/details-home/design">
-      <span [routerLinkActive]="['active']">design</span>
+    <a routerLink="/plan/plan-home/procedure-details/details-home/design/{{id}}">
+      <span [routerLinkActive]="['active']">design参数 &nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </a>
+
+    <a [routerLink]="['/plan/plan-home/procedure-details/details-home/design', id]">
+      <span [routerLinkActive]="['active']">design参数</span>
     </a>
   </li>
   <li title="execution">
@@ -16,4 +20,15 @@
     </a>
   </li>
 </ul>
+<h1>路由跳转</h1>
+<button (click)="goToIWant(1)">无参数跳转</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button (click)="goToIWant(2)">有参数单个跳转</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button (click)="goToIWant(3)">有参数多个跳转</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button (click)="goToIWant(4)">相对路径</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button (click)="goToIWant(5)">绝对路径</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button (click)="goToIWant(6)">绝对错误路径</button>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<button (click)="goBack()">返回到上一个</button>&nbsp;&nbsp;&nbsp;&nbsp;
+
+
 <router-outlet></router-outlet>

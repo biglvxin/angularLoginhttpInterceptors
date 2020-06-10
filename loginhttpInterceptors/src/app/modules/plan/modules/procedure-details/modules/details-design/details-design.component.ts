@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details-design',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsDesignComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) {
+    this.route.params.subscribe(
+      params => {
+        console.log(params);
+      }
+    );
+    console.log(this.route.snapshot.paramMap.get('id'));
+    // tslint:disable-next-line:no-string-literal
+    console.log(this.route.snapshot.params['id']);
+  }
 
   ngOnInit() {
   }

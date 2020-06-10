@@ -1,5 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { RouteModel } from 'src/app/core/model/route-model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-plan',
@@ -8,7 +9,12 @@ import { RouteModel } from 'src/app/core/model/route-model';
 })
 export class PlanComponent implements OnInit {
   public modulesLists: Array<RouteModel> = [];
-  constructor() { }
+  constructor(private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(queryParams => {
+      console.log(queryParams.productId);
+      console.log(queryParams.title);
+    });
+   }
 
   ngOnInit() {
     this.updateModulesLists();
